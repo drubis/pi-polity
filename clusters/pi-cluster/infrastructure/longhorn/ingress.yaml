@@ -1,24 +1,15 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: longhorn-ui
+  name: longhorn-dashboard
   namespace: longhorn-system
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
-  rules:
-    - host: longhorn.ec
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: longhorn-frontend
-                port:
-                  number: 80
-  tls:
-    - hosts:
-        - longhorn.ec
-      secretName: longhorn-ec-tls
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`longhorn.ec`)
+      kind: Rule
+      services:
+        - name: longhorn-frontend
+          port: 80
+
