@@ -19,6 +19,8 @@ spec:
     crds: CreateReplace
   values:
     defaultSettings:
-      defaultReplicaCount: 2
+      replicas: 3
+      replicaNodeLevelSoftAntiAffinity: true
+      replicaNodeLevelSoftAntiAffinity: true
     persistence:
       defaultClass: true
