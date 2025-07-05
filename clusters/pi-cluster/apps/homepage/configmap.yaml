@@ -4,6 +4,12 @@ metadata:
   name: homepage-config
   namespace: homepage
 data:
+  settings.yaml: |
+    title: Home
+    background: dark
+    widgets:
+      - resources
+      - search
   homepage.yaml: |
     title: My Homepage
     description: A simple dashboard

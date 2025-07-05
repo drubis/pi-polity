@@ -21,6 +21,7 @@ spec:
         volumeMounts:
           - name: config
             mountPath: /app/config # Homepage looks here by default
+            subPath: settings.yaml
       volumes:
         - name: config
           configMap:
