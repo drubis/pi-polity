@@ -21,6 +21,6 @@ spec:
     defaultSettings:
       replicas: 3
       replicaNodeLevelSoftAntiAffinity: true
-      replicaNodeLevelSoftAntiAffinity: true
+      replicaZoneLevelSoftAntiAffinity: true
     persistence:
       defaultClass: true
