@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+  namespace: homepage
+data:
+  homepage.yaml: |
+    title: My Homepage
+    description: A simple dashboard
+    sections:
+      - name: Example
+        items:
+          - name: Pi-Hole-P
+            url: http://pihole-p.ec/
+          - name: Pi-Hole-V
+            url: http://pihole-v.ec/
+          - name: TrueNAS
+            url: https://truenas.ec/
