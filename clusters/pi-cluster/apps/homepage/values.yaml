@@ -1,0 +1,10 @@
+persistence:
+  enabled: false
+
+service:
+  type: ClusterIP
+  port: 3000
+
+# Disable chart-provided ingress because we will define our own
+ingress:
+  enabled: false
